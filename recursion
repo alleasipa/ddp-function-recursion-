@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+#define RESET   "\033[0m"
+#define PINK    "\033[95m"
+
+int hitungPangkat(int a, int b) {
+    if (b == 0) {
+        return 1;  
+    }
+    return a * hitungPangkat(a, b - 1);
+}
+
+int main() {
+    int a, b;
+
+    cout << PINK << "==============================\n";
+    cout << "     PROGRAM PANGKAT (a^b)    \n";
+    cout << "==============================\n" << RESET;
+
+    cout << PINK << "Masukkan nilai a: " << RESET;
+    cin >> a;
+
+    cout << PINK << "Masukkan nilai b: " << RESET;
+    cin >> b;
+
+    int hasil = hitungPangkat(a, b);
+
+    cout << PINK << "\n------------------------------\n";
+    cout << "   Hasil : " << a << "^" << b << " = " << hasil << "\n";
+    cout << "------------------------------\n" << RESET;
+
+    return 0;
+}
